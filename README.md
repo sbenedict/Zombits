@@ -1,6 +1,8 @@
 # Zombits
 Fight zomies with bits
 
+Try: https://jtimnolan.github.io/Zombits/
+
 Easy dev environment:
 1. Download Node.js
 2. `npm install reload`
