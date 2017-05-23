@@ -1,0 +1,23 @@
+{
+  "name": "zombits",
+  "version": "0.1.0",
+  "description": "Fight zombies with bits",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "reload -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbenedict/Zombits.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbenedict/Zombits/issues"
+  },
+  "homepage": "https://github.com/sbenedict/Zombits#readme"
+}

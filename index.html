@@ -22,14 +22,29 @@
 
     app.stage.addChild(zombie);
 
+    var zombie2 = new PIXI.Sprite(resources.zombie.texture);
+
+    zombie2.x = zombie.width;
+    zombie2.y = app.renderer.height - 2 * zombie.height - 3;
+
+    zombie2.anchor.x = 0.5;
+    zombie2.anchor.y = 0.5;
+
+    app.stage.addChild(zombie2);
+
     // Listen for frame updates
     app.ticker.add(function() {
       if(zombie.x > app.view.width){
         zombie.x = -1*zombie.width;
       }
         zombie.x += 1;
+
+      if(zombie2.x > app.view.width){
+        zombie2.x = -1 * zombie2.width;
+      }
+      zombie2.x += Math.random() * 10 / 5;
     });
-});
+  });
 </script>
 </body>
 </html>
