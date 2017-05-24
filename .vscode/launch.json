@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                "${workspaceRoot}/node_modules/**/*.js",
+                "${workspaceRoot}/lib/**/*.js"
+            ]
+        },
+        {
+            "name": "Launch via NPM (test)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script", "test"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
