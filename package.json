@@ -4,9 +4,9 @@
   "description": "Fight zombies with bits",
   "main": "index.js",
   "dependencies": {
+    "tmi.js": "^1.2.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "reload -b"
   },
