@@ -1,57 +1,59 @@
-var tmi = require("tmi.js");
+'use strict';
+
+const TmiClient = require("tmi.js").client;
 
 if (process.platform === "win32") {
-  var rl = require("readline").createInterface({
+  let rl = require("readline").createInterface({
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout,
   });
 
-  rl.on("SIGINT", function () {
+  rl.on("SIGINT", function() {
     process.emit("SIGINT");
   });
 }
 
-process.on("SIGINT", function () {
-  //graceful shutdown
+process.on("SIGINT", function() {
+  // graceful shutdown
   client.disconnect().then(function(data) {
     // data returns [server, port]
-    //process.exit();
+    // process.exit();
   }).catch(function(err) {
     console.log("tmi: Error! Failed to disconnect: " + err);
-    process.exit();
+    // process.exit();
   });
 });
 
 
-var options = {
+const options = {
     options: {
-        debug: false
+        debug: false,
     },
     connection: {
-        reconnect: true
+        reconnect: true,
     },
     // identity: {
     //     username: "user",
     //     password: "oauth:xxxxx"
     // },
-    channels: ["#ssssammm"]
+    channels: ["#ssssammm"],
 };
 
-var client = new tmi.client(options);
+const client = new TmiClient(options);
 
-client.on("logon", function () {
+client.on("logon", function() {
     console.log("tmi: Logged on");
 });
 
-client.on("connected", function (address, port) {
+client.on("connected", function(address, port) {
    console.log("tmi: Connected to " + address + ":" + port);
 });
 
-client.on("disconnected", function (reason) {
+client.on("disconnected", function(reason) {
     console.log("tmi: Disconnected - " + reason);
 });
 
-client.on("message", function (channel, userstate, message, self) {
+client.on("message", function(channel, userstate, message, self) {
     // Don't listen to my own messages..
     if (self) return;
 
@@ -73,7 +75,7 @@ client.on("message", function (channel, userstate, message, self) {
     }
 });
 
-client.on("cheer", function (channel, userstate, message) {
+client.on("cheer", function(channel, userstate, message) {
     // Do your stuff using userstate.bits
     // v5 (might not apply): https://dev.twitch.tv/docs/v5/guides/PubSub/#example-bits-event-message
 });
