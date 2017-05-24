@@ -5,19 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
-            "type": "node",
-            "request": "launch",
-            "program": "${file}",
-            "protocol": "inspector",
-            "console": "integratedTerminal",
-            "skipFiles": [
-                "<node_internals>/**/*.js",
-                "${workspaceRoot}/node_modules/**/*.js",
-                "${workspaceRoot}/lib/**/*.js"
-            ]
-        },
-        {
             "name": "Launch via NPM (test)",
             "type": "node",
             "request": "launch",
@@ -29,6 +16,31 @@
                 "run-script", "test"
             ],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Launch Program",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/index.js",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                "${workspaceRoot}/node_modules/**/*.js",
+                "${workspaceRoot}/lib/**/*.js"
+            ]
+        },
+        {
+            "name": "Launch Current File",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "protocol": "inspector",
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                "${workspaceRoot}/node_modules/**/*.js",
+                "${workspaceRoot}/lib/**/*.js"
+            ]
         }
     ]
 }
