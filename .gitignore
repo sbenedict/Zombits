@@ -1,3 +1,12 @@
+# project ignores
+scripts/PhysicsJS-0.7.0/*
+!scripts/PhysicsJS-0.7.0/dist
+
+# standard OS ignores
+.DS_Store
+Thumbs.db
+
+# standard Node ignores
 # Source: https://github.com/github/gitignore/blob/master/Node.gitignore
 
 # Logs
